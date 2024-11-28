@@ -1,0 +1,45 @@
+BÁO CÁO DỰ ÁN QUẢN LÝ SẢN PHẨM VỚI FLUTTER VÀ FIREBASE
+1. Giới thiệu về dự án
+Dự án này xây dựng một ứng dụng quản lý sản phẩm với các tính năng cơ bản như thêm, sửa, xóa và hiển thị danh sách sản phẩm. Người dùng có thể quản lý thông tin sản phẩm như tên, loại, giá, và hình ảnh. Ứng dụng sử dụng Flutter để xây dựng giao diện người dùng và Firebase (Firestore và Storage) để lưu trữ và quản lý dữ liệu.
+2. Mục tiêu của dự án
+- Tạo một hệ thống quản lý sản phẩm đơn giản cho phép người dùng thêm, chỉnh sửa, và xóa sản phẩm.
+- Tích hợp khả năng tải và hiển thị hình ảnh từ Firebase Storage mà không cần lưu trữ cục bộ.
+- Hiển thị danh sách sản phẩm với thông tin đầy đủ (tên, giá, loại, và hình ảnh).
+3. Các bước thực hiện
+1.	Cài đặt và thiết lập môi trường phát triển trên Android Studio
+o	Cài đặt Android Studio: Tải xuống và cài đặt Android Studio từ trang chủ của Google.
+o	Cài đặt Flutter SDK: Cài đặt Flutter SDK để phát triển ứng dụng đa nền tảng.
+o	Thiết lập AVD (Android Virtual Device): Cấu hình một thiết bị ảo để chạy và kiểm tra ứng dụng trên Android.
+o	Tích hợp Flutter với Android Studio: Cài đặt plugin Flutter/Dart trong Android Studio.
+2.	Tạo dự án Flutter
+o	Khởi tạo một dự án Flutter mới từ Android Studio bằng cách chọn New Flutter Project.
+o	Thiết lập cấu trúc thư mục và các phần cơ bản như lib/, services/, screens/ để tổ chức mã nguồn.
+3.	Tích hợp Firebase vào dự án Flutter
+o	Đăng ký dự án Firebase: Truy cập vào Firebase Console và tạo một dự án Firebase mới.
+o	Đăng ký ứng dụng Android trong Firebase: Thêm ứng dụng Android vào Firebase bằng cách điền package name và các thông tin cần thiết.
+o	Tải xuống tệp cấu hình google-services.json: Tải tệp này từ Firebase và đặt vào thư mục android/app của dự án Flutter.
+o	Cập nhật tệp build.gradle:
+	Trong tệp android/build.gradle, thêm dòng classpath 'com.google.gms:google-services:4.3.8' vào phần dependencies.
+	Trong tệp android/app/build.gradle, thêm dòng apply plugin: 'com.google.gms.google-services' để Firebase có thể kết nối với ứng dụng.
+4.	Cấu hình Firebase Firestore và Firebase Storage
+o	Firestore: Sử dụng Firestore để lưu trữ và quản lý dữ liệu sản phẩm. Thiết lập quyền truy cập Firestore phù hợp cho ứng dụng.
+o	Firebase Storage: Sử dụng Firebase Storage để lưu trữ hình ảnh sản phẩm. Thiết lập quyền truy cập Storage để cho phép upload và download ảnh.
+5.	Phát triển các chức năng chính của ứng dụng
+o	Màn hình Thêm Sản Phẩm:
+	Các trường thông tin như tên sản phẩm, loại sản phẩm, giá sản phẩm và upload ảnh.
+	Sử dụng Firebase Storage để upload hình ảnh và Firestore để lưu thông tin sản phẩm cùng với URL ảnh.
+o	Màn hình Danh Sách Sản Phẩm:
+	Hiển thị danh sách sản phẩm với thông tin và hình ảnh từ Firestore và Firebase Storage.
+	Thêm chức năng chỉnh sửa, xóa sản phẩm.
+6.	Xử lý quyền và tương tác trên Android
+o	Quyền truy cập: Thêm quyền truy cập camera, bộ nhớ trong tệp AndroidManifest.xml để cho phép ứng dụng chụp ảnh hoặc chọn ảnh từ thư viện.
+o	Yêu cầu quyền khi chạy ứng dụng: Sử dụng các thư viện Flutter để yêu cầu quyền trong thời gian chạy đối với Android từ phiên bản 6.0 trở lên.
+7.	Kiểm tra và debug ứng dụng
+o	Sử dụng AVD (Android Virtual Device) hoặc thiết bị thật để kiểm tra việc upload ảnh, lưu sản phẩm vào Firestore và hiển thị danh sách sản phẩm.
+o	Kiểm tra tính năng chỉnh sửa và xóa sản phẩm có hoạt động tốt không.
+
+Ngày 17 tháng 10 năm 2024
+Người thực hiện
+
+Nguyễn Thị Phương Thảo
+
